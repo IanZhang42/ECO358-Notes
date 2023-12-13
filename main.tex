@@ -1153,7 +1153,7 @@ This relationship is known as the \textbf{put-call parity}.
     The amount by which an option is in-the-money, or zero if out-the-money
 \end{definition}
 \begin{itemize}
-    \item An American option can't be worth less than its intrinsic value, or else everyone will fulfill instantly since value of the option will be worth more instantly 
+\item An American option can't be worth less than its intrinsic value, or else everyone will fulfill instantly since value of the option will be worth more instantly 
 \end{itemize}
 \begin{definition}[Time Value]
     The difference between an option's price and its intrinsic value
@@ -1192,9 +1192,37 @@ To compute the value of an option in a multiperiod binomial tree, we start at th
 
 
 \subsubsection{Black-Scholes Option Pricing Model}
+The Black-Scholes Option Pricing Model is used to price European options when the stock can be traded continuously. \\
+The Black-Scholes price of a \textbf{call option} on a non-dividend paying stock is 
+\begin{equation*}
+    C = S \times N(d_1)  - PV(K) \times N(d_2)
+\end{equation*}
+where $S$ is the current price of the stock, $K$ is the exercise price, $N(d)$ is the cumulative normal distribution (i.e.: $N(d) = \Phi(d)$ where $\Phi$ is the cdf of a $\mathcal N(0, 1) $ distribution). For $d_1$ and $d_2$, we define them as 
+\begin{equation*}
+    d_1 = \frac{\ln\left[\frac{S}{PV(K)}\right]}{\sigma\sqrt T} = \frac{\sigma\sqrt{T}}{2} \qquad d_2 = d_1 - \sigma\sqrt{T}
+\end{equation*}
+where $\sigma$ is the annual volatility and $T$ is the number of years left to expiration.\\
+The Black-Scholes price of a \textbf{put option} on a non-dividend paying stock is 
+\begin{equation*}
+    P = PV(K)[1 - N(d_2)] - S[1 - N(d_1)]
+\end{equation*}
+where $d_1$ and $d_2$ are defined the same as above. \\
+If $PV(\text{Div})$ is the present value of any dividends paid \textit{prior to the expiration date of the option}, then use 
+\begin{equation*}
+    S^x = S - PV(\text{Div})
+\end{equation*}
+where $S^x$ is the price of the stock excluding any dividends. We replace $S$ with $S^x$ in the Black-Scholes equations. If a stock's dividend yield is compounding and equal to $q$, then 
+\begin{equation*}
+    S^x = \frac{S}{1 + q}
+\end{equation*}
+Of the inputs into the Black-Scholes formula, only volatility $\sigma$ is not observable directly. So, we consider the implied volatility.
+\begin{itemize}
+    \item The implied volatility from one option can be used to estimate the value of other options on the stock with the same expiration date.
+\end{itemize}
 
 
 \subsubsection{Risk and Return of an Option}
+
 
 
 
