@@ -1165,6 +1165,30 @@ This relationship is known as the \textbf{put-call parity}.
 
 \subsection{Option Valuation}
 \subsubsection{Binomial Option Pricing Model}
+The Binomial Option Pricing Model prices options based on the assumption that at the end of the next period, the stock's return can take on only two values. 
+\begin{definition}[Replicating Portfolio]
+    A portfolio consisting of other securities that has exactly the same value in one period as the option.
+\end{definition}
+By the Law of One Price, the price of the option today must equal the current market value of the replicating portfolio.
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.25]{Screenshot 2023-12-13 at 16.47.58.png}
+\end{figure}
+\newpage
+Solving for the two replicating portfolio equations for the two unknowns $\Delta$ and $B$ yiels the general formula for the replicating portfolio:
+\begin{equation*}
+    \Delta = \frac{C_u - C_d}{S_u -S_d} \qquad B = \frac{C_d - S_d\Delta}{1 + r_f}
+\end{equation*}
+The value of the option is
+\begin{equation*}
+    C = S\Delta + B
+\end{equation*}
+Consider a two period binomial tree.
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.3]{Screenshot 2023-12-13 at 16.52.30.png}
+\end{figure}
+To compute the value of an option in a multiperiod binomial tree, we start at the end of the tree and work backwards.
 
 
 \subsubsection{Black-Scholes Option Pricing Model}
