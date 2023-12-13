@@ -1222,6 +1222,37 @@ Of the inputs into the Black-Scholes formula, only volatility $\sigma$ is not ob
 
 
 \subsubsection{Risk and Return of an Option}
+Given the option price in the Binomial Model 
+\begin{equation*}
+    C = S\Delta + B
+\end{equation*}
+and paired with the Black-Scholes model, can wee that the Black-Scholes replication portfolio of a call option satisfies 
+\begin{equation*}
+    \Delta = N(d_1) \qquad B = -PV(K)N(d_2)
+\end{equation*}
+\begin{definition}[Option Delta ($\Delta$)]
+    The change in the price of an option given a $\$1$ change in the price of the stock.
+\end{definition}
+Notice how the replicating portfolio of a call option always has a long position in the stock and a short position in the bond (i.e.: a leveraged portfolio). Thus, a call option on a positive beta stock has a higher beta and higher return.\\
+For a put option, the replicating portoflio is 
+\begin{equation*}
+    \Delta = -[1 - N(d_1)] \qquad B = PV(K)[1 - N(d_2)]
+\end{equation*}
+Note that the replicating portfolio always has a short position in the stock and a long position in the bond. This means that put options on a postive beta stock have a negative beta and therefore lower returns.\\
+The \textbf{option beta} is computed as 
+\begin{equation*}
+    \beta_{\text{option}} = \frac{S\Delta}{S\Delta + B}\beta_s + \frac{B}{S\Delta + B}\beta_B
+\end{equation*}
+However, since a bond is riskless, then $\beta_B = 0$, thus 
+\begin{equation*}
+    \beta_{\text{option}} = \frac{S\Delta}{S\Delta + B} \beta_s
+\end{equation*}
+\begin{definition}[Leverage ratio]
+The leverage ratio is a measure of leverage obtained by looking at debt as a proportion of value, or interest payments as a proportion of cash flows. It's given by 
+\begin{equation*}
+    \frac{S\Delta}{S\Delta + B}
+\end{equation*}
+\end{definition}
 
 
 
