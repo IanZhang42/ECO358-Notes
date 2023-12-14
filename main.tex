@@ -1175,7 +1175,7 @@ By the Law of One Price, the price of the option today must equal the current ma
     \includegraphics[scale=0.25]{Screenshot 2023-12-13 at 16.47.58.png}
 \end{figure}
 \newpage
-Solving for the two replicating portfolio equations for the two unknowns $\Delta$ and $B$ yiels the general formula for the replicating portfolio:
+Solving for the two replicating portfolio equations for the two unknowns $\Delta$ and $B$ yields the general formula for the replicating portfolio:
 \begin{equation*}
     \Delta = \frac{C_u - C_d}{S_u -S_d} \qquad B = \frac{C_d - S_d\Delta}{1 + r_f}
 \end{equation*}
@@ -1188,7 +1188,7 @@ Consider a two period binomial tree.
     \centering
     \includegraphics[scale=0.3]{Screenshot 2023-12-13 at 16.52.30.png}
 \end{figure}
-To compute the value of an option in a multiperiod binomial tree, we start at the end of the tree and work backwards.
+To compute the value of an option in a multi-period binomial tree, we start at the end of the tree and work backwards.
 
 
 \subsubsection{Black-Scholes Option Pricing Model}
@@ -1234,16 +1234,16 @@ and paired with the Black-Scholes model, can wee that the Black-Scholes replicat
     The change in the price of an option given a $\$1$ change in the price of the stock.
 \end{definition}
 Notice how the replicating portfolio of a call option always has a long position in the stock and a short position in the bond (i.e.: a leveraged portfolio). Thus, a call option on a positive beta stock has a higher beta and higher return.\\
-For a put option, the replicating portoflio is 
+For a put option, the replicating portfolio is 
 \begin{equation*}
     \Delta = -[1 - N(d_1)] \qquad B = PV(K)[1 - N(d_2)]
 \end{equation*}
-Note that the replicating portfolio always has a short position in the stock and a long position in the bond. This means that put options on a postive beta stock have a negative beta and therefore lower returns.\\
+Note that the replicating portfolio always has a short position in the stock and a long position in the bond. This means that put options on a positive beta stock have a negative beta and therefore lower returns.\\
 The \textbf{option beta} is computed as 
 \begin{equation*}
     \beta_{\text{option}} = \frac{S\Delta}{S\Delta + B}\beta_s + \frac{B}{S\Delta + B}\beta_B
 \end{equation*}
-However, since a bond is riskless, then $\beta_B = 0$, thus 
+However, since a bond is risk-less, then $\beta_B = 0$, thus 
 \begin{equation*}
     \beta_{\text{option}} = \frac{S\Delta}{S\Delta + B} \beta_s
 \end{equation*}
